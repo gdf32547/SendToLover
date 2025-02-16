@@ -110,15 +110,7 @@ $('#yes').click(function() {
                 text: CONFIG.messDesc,
                 confirmButtonColor: '#83d0c9',
                 onClose: () => {
-                    // Mở trang mới
                     var newWindow = window.open(CONFIG.messLink, '_blank');
-
-                    // Đảm bảo rằng trang mới đã tải xong và sau đó phát nhạc
-                    newWindow.onload = function() {
-                        var audio = newWindow.document.createElement('sound/sound.mp3');
-                        audio.src = 'sound/Soundtrack.mp3';
-                        audio.autoplay = true;
-                        newWindow.document.body.appendChild(audio); // Thêm audio vào trang mới
                     };
                 }
             })
